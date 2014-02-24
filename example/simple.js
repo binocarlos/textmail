@@ -27,8 +27,6 @@ var email = mailer.create('/simple.ejs', 'A test email', [
 ])
 
 mailer.on('email', function(data){
-	console.log('-------------------------------------------');
-	console.log('email data:');
 	console.dir(data);
 })
 

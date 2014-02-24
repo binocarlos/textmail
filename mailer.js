@@ -34,7 +34,13 @@ Mailer.prototype.create = function(template, subject, emails){
 
 	emails = emails || [];
 
-	return function(from, data, done){
+	return function(from, to, data, done){
+
+		if(arguments.length<=3){
+			done = data;
+			data = to;
+			to = null;
+		}
 
 		data = data || {};
 
@@ -51,7 +57,16 @@ Mailer.prototype.create = function(template, subject, emails){
 
 			var body = ejs.render(template, data);
 
-			async.forEach(emails, function(to, next){
+			var sendemails = [].concat(emails);
+
+			if(to){
+				if(typeof(to)!='array'){
+					to = [to];
+				}
+				sendemails = sendemails.concat(to);
+			}
+
+			async.forEach(sendemails, function(to, next){
 
 				var email = {
 					from:from,

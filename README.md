@@ -53,7 +53,9 @@ app.use('/contactsubmit', function(req, res){
 
 	data.timestamp = new Date().getTime();
 
-	contact(data.email, data);
+	contact(data.email, data, function(error){
+		console.log('emails sent');
+	})
 })
 
 ```
@@ -85,9 +87,13 @@ The template can be a path relative to the 'template_root' or can be a full path
 
 The template is rendered using ejs.
 
-## email(from_address, vars)
+## email(from_address, vars, callback)
 
 Send the email by running it as a function passing the from address and the extra variables to render into the template
+
+## email(from_address, to, vars, callback)
+
+Add an extra email (or array of emails) to the list of address the email is sent to
 
 ## license
 
