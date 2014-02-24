@@ -1,6 +1,6 @@
 {
   "name": "textmail",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Send emails using mailgun and plain text templates",
   "main": "index.js",
   "scripts": {
