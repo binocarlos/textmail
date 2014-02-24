@@ -1,0 +1,31 @@
+{
+  "name": "textmail",
+  "version": "0.0.1",
+  "description": "Send emails using mailgun and plain text templates",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/binocarlos/textmail.git"
+  },
+  "keywords": [
+    "email",
+    "mailgun",
+    "template",
+    "mail"
+  ],
+  "author": "Kai Davenport",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/binocarlos/textmail/issues"
+  },
+  "homepage": "https://github.com/binocarlos/textmail",
+  "dependencies": {
+    "mailgun-js": "~0.3.2",
+    "ejs": "~0.8.5",
+    "optimist": "~0.6.1",
+    "async": "~0.2.10"
+  }
+}
